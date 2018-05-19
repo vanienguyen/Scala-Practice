@@ -1,26 +1,30 @@
 package practice
 
-object SalaryRaiser {
-
-  def doubleUp(numbers: List[Int]): List[Int] =
-    numbers.map(number => number * 2)
-
-
-  def divideByTwo(numbers: List[Int]): List[Double] =
-    numbers.map(number => number / 2.0)
-}
-
 
 object mapMethod {
   def main(args: Array[String]) : Unit = {
 
-    val numbers = List(10, 20, 30)
+    // map
+//    val numbers = List(10, 20, 30)
+//
+//    val firstNewNums = numbers.map{(number: Int) => number*2}
+//    println(firstNewNums)
+//
+//    val secondNewNums = numbers.map{(number: Int) => number*2.0};
+//    println(secondNewNums)
 
-    val firstNewNumbers = SalaryRaiser.doubleUp(numbers);
-    println(firstNewNumbers)
+    // flatMap
+    val numbers = List(1, 4, 9)
 
-    val secondNewNumbers = SalaryRaiser.divideByTwo(numbers);
-    println(secondNewNumbers)
+    val firstNewNums = numbers.flatMap{number => List(number, number + 1)}
+    println(firstNewNums)
+
+    val secondNewNums = numbers.flatMap{number => if (number > 5) List() else List(number)}
+    println(secondNewNums)
+
+
+
+
   }
 
 }
